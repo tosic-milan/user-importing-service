@@ -19,6 +19,7 @@ namespace UserImportingService.Infrastructure.JSON
         }
         public void Write(string json)
         {
+            Directory.CreateDirectory(_path);
             var timestamp = DateTime.Now;
             File.WriteAllText(_path + timestamp.ToUniversalTime().Subtract(
                                                                     new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
