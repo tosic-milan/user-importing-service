@@ -26,6 +26,7 @@ namespace UserImportingService.Application.Students.Commands.UploadStudents
             RuleFor(x => x.Middlename).NotEmpty();
             RuleFor(x => x.StudentId).NotEmpty();
             RuleFor(x => x.Phone).NotEmpty();
+            RuleFor(x => x.Parents).NotEmpty();
             RuleForEach(x => x.Parents)
                 .SetValidator(new ParentDtoValidator());
         }
